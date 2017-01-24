@@ -1,4 +1,4 @@
-var size, energy=0, song, storedShake;
+var mySize, energy=0, song, storedShake = 0;
 
 function preload(){
 	song = loadSound('assets/j.mp3');
@@ -14,7 +14,8 @@ function draw() {
   translate(width/2,height/2);
   noStroke();
   fill(0);
-  ellipse(0,0,energy*0.1);
+  mySize = energy*0.1
+  ellipse(0,0,mySize);
 
   fill(255,0,0);
   text(storedShake, width/2, height/2);
