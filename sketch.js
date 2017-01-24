@@ -27,7 +27,7 @@ function draw() {
   	if( !song.isPlaying() ) {
   		song.play();
   	}
-  	energy --;
+  	energy=-10;
   } else {
   	if ( song.isPlaying() ) { // .isPlaying() returns a boolean
 	    song.pause();
