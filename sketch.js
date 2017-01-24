@@ -23,11 +23,12 @@ function draw() {
   text(round(storedShake).toLocaleString(), 0, 0);
   text(round(energy).toLocaleString(), 0, 40);
 
-  if (energy > 1) {
+  var incrementCheck = 10
+  if (energy > incrementCheck) {
   	if( !song.isPlaying() ) {
   		song.play();
   	}
-  	energy=-10;
+  	energy=-incrementCheck;
   } else {
   	if ( song.isPlaying() ) { // .isPlaying() returns a boolean
 	    song.pause();
