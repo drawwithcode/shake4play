@@ -18,7 +18,10 @@ function draw() {
   ellipse(0,0,mySize);
 
   fill(255,0,0);
-  text(storedShake, width/2, height/2);
+  textAlign(CENTER);
+  textSize(20);
+  text(round(storedShake).toLocaleString(), 0, 0);
+  text(round(energy).toLocaleString(), 0, 40);
 
   if (energy > 1) {
   	if( !song.isPlaying() ) {
