@@ -1,4 +1,4 @@
-var size, energy=0, song;
+var size, energy=0, song, storedShake;
 
 function preload(){
 	song = loadSound('assets/j.mp3');
@@ -16,6 +16,8 @@ function draw() {
   fill(0);
   ellipse(0,0,energy*0.1);
 
+  fill(255,0,0);
+  text(storedShake, width/2, height/2);
 
   if (energy > 1) {
   	if( !song.isPlaying() ) {
@@ -25,12 +27,17 @@ function draw() {
   } else {
   	if ( song.isPlaying() ) { // .isPlaying() returns a boolean
 	    song.pause();
-	}
+		}
   }
 }
 
 function deviceShaken(){
-  energy += abs(accelerationX) + abs(accelerationY) + abs(accelerationZ);
+	var thisShake = sqrt( pow(accelerationX,2) + pow(accelerationY,2) + pow(accelerationZ,2) );
+  energy += thisShake;
+  
+  if ( thisShake > storedShake ){
+  	storedShake = thisShake;
+  }
 }
 
 // function mousePressed() {
