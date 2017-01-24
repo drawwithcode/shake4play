@@ -7,6 +7,8 @@ function setup() {
 function draw() {
   background(255);
   translate(width/2,height/2);
+  noStroke();
+  fill(0);
   ellipse(0,0,energy);
 }
 
