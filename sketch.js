@@ -2,6 +2,7 @@ var size, energy=0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  setShakeThreshold(10);
 }
 
 function draw() {
@@ -9,7 +10,10 @@ function draw() {
   translate(width/2,height/2);
   noStroke();
   fill(0);
-  ellipse(0,0,energy);
+  ellipse(0,0,energy*0.1);
+
+
+  energy --;
 }
 
 function deviceShaken(){
